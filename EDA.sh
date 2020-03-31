@@ -4,7 +4,7 @@ echo "===================EDA Launch Script=================="
 
 
 PS3='Please enter your choice: '
-options=("Quartus" "Vivado" "VSDFlow" "iVerilog" "Verilator" "MAGIC" "OpenTimer" "ngSpice" "Quit")
+options=("Quartus" "Vivado" "VSDFlow" "OpenROAD" "iVerilog" "Verilator" "MAGIC" "OpenTimer" "ngSpice"  "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -29,6 +29,11 @@ do
 	    ls
 	    break
             ;;
+	 "OpenROAD")
+            echo "Redirecting to OpenROAD environment..."
+	    docker run -it -u $(id -u ${USER}):$(id -g ${USER}) openroad/flow bash
+	    break
+            ;;
         "iVerilog")
             echo "Running iVerilog..."
 	    echo "Icarus Verilog is a Verilog simulation and synthesis tool. It operates as a compiler, compiling source code written in Verilog (IEEE-1364) into some target format. For batch simulation, the compiler can generate an intermediate form called vvp assembly. This intermediate form is executed by the ``vvp'' command. For synthesis, the compiler generates netlists in the desired format."
@@ -48,18 +53,18 @@ do
 	    break
 	    ;;
 	"MAGIC")
-            echo "Launching MAGIC VLSI custom layout tool"
+            echo "Launching MAGIC VLSI custom layout tool..."
 	    sleep 2s
 	    magic&
             ;;
 	"OpenTimer")
-            echo "Launching OpenTimer STA tool"
+            echo "Launching OpenTimer STA tool..."
 	    sleep 2s
 	    cd /home/andrew/OpenTimerInstallation/bin
 	    ./ot-shell
             ;;
 	"ngSpice")
-            echo "Launching ngSpice Circuit Simulator tool"
+            echo "Launching ngSpice Circuit Simulator tool..."
 	    sleep 2s
 	    ngspice
             ;;
