@@ -4,7 +4,7 @@ echo "===================EDA Launch Script=================="
 
 
 PS3='Please enter your choice: '
-options=("Quartus" "Vivado" "VSDFlow" "OpenROAD" "iVerilog" "Verilator" "MAGIC" "OpenTimer" "ngSpice"  "Quit")
+options=("Quartus" "Vivado" "VSDFlow" "OpenROAD" "iVerilog" "Verilator" "MAGIC" "OpenTimer" "ngSpice" "KiCad" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -56,17 +56,26 @@ do
             echo "Launching MAGIC VLSI custom layout tool..."
 	    sleep 2s
 	    magic&
+	    break
             ;;
 	"OpenTimer")
             echo "Launching OpenTimer STA tool..."
 	    sleep 2s
 	    cd /home/andrew/OpenTimerInstallation/bin
 	    ./ot-shell
+	    break
             ;;
 	"ngSpice")
             echo "Launching ngSpice Circuit Simulator tool..."
 	    sleep 2s
 	    ngspice
+	    break
+            ;;
+	"KiCad")
+            echo "Launching KiCad 5.1.5..."
+	    sleep 2s
+	    kicad&
+	    break
             ;;
         "Quit")
             break
