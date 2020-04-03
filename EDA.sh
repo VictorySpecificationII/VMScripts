@@ -1,6 +1,15 @@
 #!/bin/bash
 # Bash Menu Script Example
-echo "===================EDA Launch Script=================="
+
+figlet -c "VLSI Launch Script"
+
+echo "This script amasses together a collection of software for full stack FPGA, VLSI and PCB development."
+echo "It does not provide installation, as this is a work in progress. More functionality will be added in"
+echo "the near future to provide a ready-to-run script to be ran once on a fresh Ubuntu installation in "
+echo "order to provide the full environment."
+echo " "
+echo "Created and maintained by Antreas Christofi, @VictorySpecificationII on GitHub."
+echo " " 
 
 
 PS3='Please enter your choice: '
