@@ -87,9 +87,11 @@ do
 	    break
             ;;
         "Quit")
+	    echo "Goodbye!"
+	    sleep 1s
             break
             ;;
 
-        *) echo "invalid option $REPLY";;
+        *) echo "$REPLY is an invalid choice! Please input the number of the application you wish to run!";;
     esac
 done
