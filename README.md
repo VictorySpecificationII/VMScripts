@@ -1,11 +1,13 @@
 # VMScripts
-Scripts I use to personalize my VM installations
+Scripts I use to personalize my VM installations.
 
 I have a collection of VM's, each of which serve a different purpose for me.
 
-An EDA VM.
-A Race Engineering/Machine Learning/Artificial Intelligence VM.
+The long-term plan is for these scripts to serve as a ready-to-run resource to
+turn any fresh Ubuntu installation into a complete toolchain for R&D. 
 
-My plan is to some time release them as complete toolchains for both EDA and Race Engineering.
+#To:do List
 
-These scripts are meant to give one an idea of what applications are installed on those VM's.
+- Gather software packaes
+- Add first-time setup code
+- Add installation code
