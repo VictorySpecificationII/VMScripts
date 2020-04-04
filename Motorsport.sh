@@ -4,6 +4,14 @@
 
 figlet -c "Motorsport Launch Script"
 
+echo "This script amasses together a collection of software for UGV development and ECU tuning."
+echo "It does not provide installation capabilities, as this is a work in progress. More "
+echo "functionality will be added in the near future to provide a ready-to-run script to be "
+echo "ran once on a fresh Ubuntu installation in  order to provide the full environment."
+echo " "
+echo "Created and maintained by Antreas Christofi, @VictorySpecificationII on GitHub."
+echo " " 
+
 
 PS3='Please enter your choice: '
 options=("GNU Octave" "Jupyter Notebook" "Pycharm 2019.3" "TunerStudio" "MegaLogViewer" "ProjectChrono System Dynamics" "The Open Racing Car Simulator" "ROScore" "Quit")
