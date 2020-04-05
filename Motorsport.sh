@@ -3,6 +3,7 @@
 
 figlet -c "Motorsport Launch Script"
 
+echo "																						   "
 echo "This script amasses together a collection of software for UGV development and ECU tuning."
 echo "It does not provide installation capabilities, as this is a work in progress. More "
 echo "functionality will be added in the near future to provide a ready-to-run script to be "
@@ -13,7 +14,7 @@ echo " "
 
 
 PS3='Please enter your choice: '
-options=("GNU Octave" "Jupyter Notebook" "Pycharm 2019.3" "Code::Blocks" "ROScore" "The Open Racing Car Simulator" "ProjectChrono System Dynamics" "TunerStudio" "MegaLogViewer" "Quit")
+options=("GNU Octave" "Jupyter Notebook" "Pycharm 2019.3" "Code::Blocks" "ROS - Core" "ROS - Gazebo" "ROS - RViz" "The Open Racing Car Simulator" "ProjectChrono System Dynamics" "TunerStudio" "MegaLogViewer" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -41,12 +42,23 @@ do
 			codeblocks &>/dev/null &
 			break 
 			;;            
-        "ROScore")
-            echo "Launching ROScore..."
+        "ROS - Core")
+            echo "Launching ROS Melodic core..."
 	    	sleep 2s
 	    	roscore
 	    	break
             ;;
+        "ROS - Gazebo")
+			echo "Launching Gazebo 3D Simulator..."
+			gazebo-9.0.0 &>/dev/null &
+			break
+			;;
+        "ROS - RViz")
+			sleep 2s
+			echo "Launching RViz 3D Visualizer..."
+			rviz &>/dev/null &
+			break
+			;;
     	"The Open Racing Car Simulator")
             echo "Launching The Open Racing Car Simulator v.1.3.7 SCR..."
 	    	sleep 2s
