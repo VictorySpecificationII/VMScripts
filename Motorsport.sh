@@ -21,32 +21,32 @@ do
         "GNU Octave")
             echo "Launching GNU Octave..."
 	    	sleep 2s
-	    	octave
+	    	octave &>/dev/null &
+	    	break
             ;;
 		"Jupyter Notebook")
             echo "Launching Jupyter Notebook..."
 	    	sleep 2s
-	    	jupyter-notebook
+	    	jupyter-notebook &>/dev/null &
 	    	break
             ;;
     	"Pycharm 2019.3")
         	echo "Launching Pycharm 2019.3..."
 	    	sleep 2s
-	    	pycharm-community&
+	    	pycharm-community &>/dev/null &
 	    	break
             ;;
 		"TunerStudio")
             echo "Launching TunerStudio..."
 	    	sleep 2s
-	    	cd /home/andrew/Software/TunerStudioMS
-	    	./TunerStudio.sh
+	    	#cd /home/andrew/Software/TunerStudioMS
+	    	bash /home/andrew/Software/TunerStudioMS/TunerStudio.sh &>/dev/null &
 	    	break
             ;;
 		"MegaLogViewer")
             echo "Launching MegaLogViewer..."
 	    	sleep 2s
-	    	cd /home/andrew/Software/MegaLogViewerHD
-	    	./MegaLogViewer.sh
+	    	bash /home/andrew/Software/MegaLogViewerHD/MegaLogViewer.sh &>/dev/null &
 	    	break
             ;;
 		"ProjectChrono System Dynamics")
