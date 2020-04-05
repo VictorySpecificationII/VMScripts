@@ -13,7 +13,7 @@ echo " "
 
 
 PS3='Please enter your choice: '
-options=("Quartus" "Vivado" "VSDFlow" "OpenROAD" "iVerilog" "Verilator" "MAGIC" "OpenTimer" "ngSpice" "KiCad" "Quit")
+options=("Quartus" "Vivado" "VSDFlow" "OpenROAD" "iVerilog" "Verilator" "GTKWave" "MAGIC" "OpenTimer" "ngSpice" "KiCad" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -59,6 +59,12 @@ do
 	    echo "Input path of Verilog file to run on Verilator:"
             read pathtoverilogfile
             verilator $pathtoverilogfile
+	    break
+	    ;;
+	"GTKWave")
+	    sleep 2s
+	    echo "Launching GTK Wave..."
+	    gtkwave
 	    break
 	    ;;
 	"MAGIC")
