@@ -14,10 +14,18 @@ echo " "
 
 
 PS3='Please enter your choice: '
-options=("GNU Octave" "Jupyter Notebook" "Pycharm 2019.3" "Code::Blocks" "ROS - Core" "ROS - Gazebo" "ROS - RViz" "The Open Racing Car Simulator" "ProjectChrono System Dynamics" "TunerStudio" "MegaLogViewer" "Quit")
+options=("Anaconda3" "GNU Octave" "Jupyter Notebook" "Pycharm 2019.3" "Code::Blocks" "ROS - Core" "ROS - Gazebo" "ROS - RViz" "The Open Racing Car Simulator" "ProjectChrono System Dynamics" "TunerStudio" "MegaLogViewer" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
+
+    	 "Anaconda3")
+            echo "Launching Anaconda3..."
+	    	sleep 2s
+	    	read -p 'Please specify the environment you wish to enter: ' env
+	    	conda activate $env
+	    	break
+            ;;
         "GNU Octave")
             echo "Launching GNU Octave..."
 	    	sleep 2s
