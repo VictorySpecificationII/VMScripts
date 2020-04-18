@@ -23,6 +23,7 @@ do
             echo "Launching Anaconda3..."
 	    	sleep 2s
 	    	read -p 'Please specify the environment you wish to enter: ' env
+	    	echo "To run anaconda-navigator, type anaconda-navigator as soon as you enter the environment."
 	    	conda activate $env
 	    	break
             ;;
