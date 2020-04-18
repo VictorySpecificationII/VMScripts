@@ -6,15 +6,27 @@ echo "This script will automagically install all the necessary software for your
 echo "become a reality! For some applications, your user input will be required. So, I have included"
 echo "helpful links to guide you through. See you on the other side!"
 
+echo " "
+echo "Created and maintained by Antreas Christofi, @VictorySpecificationII on GitHub."
+echo " " 
+
 sleep 2s
-echo " "
-echo "Creating Software directory in /home/$USER"
-mkdir -p /home/$USER/Software 
-echo " "
 
 echo "Step0: Figlet!"
 sudo apt-get update -y
 sudo apt-get install -y figlet
+
+
+echo " "
+mkdir -p /home/$USER/Software 
+echo "Created Software directory in /home/$USER".
+echo " "
+
+echo " "
+echo "Creating Launchers folder and moving the launch script there."
+mkdir -p /home/$USER/Launchers
+mv Motorsport.sh /home/$USER/Launchers
+
 
 echo "Step1: Anaconda3"
 sleep 1s
@@ -27,7 +39,7 @@ while [$openlink != "Y"]
 echo " "
 echo "Good! Let's begin."
 echo " "
-cd home/$USER/Software
+cd /home/$USER/Software
 wget -v https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
 bash Anaconda3-2020.02-Linux-x86_64.sh
 echo 'CONDA_AUTO_ACTIVATE_BASE=false' >> ~/.bashrc
@@ -75,6 +87,9 @@ sleep 2s
 echo "ROS Melodic installation complete."
 echo " "
 
+echo "Adding alias to .bashrc..."
+echo 'alias letsgoracing=". /home/$USER/Launchers/Motorsport.sh"' >> ~/.bashrc
+
 
 echo "If you want to run TORCS as your UGV simulator, go to https://github.com/fmirus and download the patched client, then follow the instructions."
 echo "If you come from the Formula Student domain, go to https://github.com/AMZ-Driverless/ and download FSSIM and any tools that you need for development."
@@ -83,5 +98,6 @@ echo " "
 echo "I will keep updating this script as I add more programs. Meanwhile, do modify the script to add your own launchers as you go! And if you feel like it, "
 echo "share it with us!"
 echo " "
+echo "To run the launcher, type letsgoracing in terminal!"
 sleep 10s
 echo "The base system installation is complete. Happy experimenting!"
