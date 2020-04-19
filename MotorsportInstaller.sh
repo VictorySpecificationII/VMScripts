@@ -1,7 +1,8 @@
 #!/bin/bash
 
 echo "Welcome $USER!"
-echo" "
+sleep 4s
+echo " "
 echo "This script will automagically install all the necessary software for your UGV environment to "
 echo "become a reality! For some applications, your user input will be required. So, I have included"
 echo "helpful links to guide you through. See you on the other side!"
@@ -10,9 +11,10 @@ echo " "
 echo "Created and maintained by Antreas Christofi, @VictorySpecificationII on GitHub."
 echo " " 
 
-sleep 2s
+sleep 4s
 
 echo "Step0: Figlet!"
+sleep 2s
 sudo apt-get update -y
 sudo apt-get install -y figlet
 
@@ -27,33 +29,29 @@ echo "Creating Launchers folder and moving the launch script there."
 mkdir -p /home/$USER/Launchers
 mv Motorsport.sh /home/$USER/Launchers
 
-
+sleep 4s
 echo "Step1: Anaconda3"
-sleep 1s
+sleep 2s
 echo "Downloading Anaconda3..."
 echo "MANDATORY: Visit https://www.digitalocean.com/community/tutorials/how-to-install-anaconda-on-ubuntu-18-04-quickstart and follow the instructions to complete the installation."
 sleep 10s
-openlink="N"
-while [$openlink != "Y"]
-	read -p 'Have you opened the link?: (Y/N) ' openlink
-echo " "
+
 echo "Good! Let's begin."
+sleep 4s
 echo " "
 cd /home/$USER/Software
 wget -v https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
 bash Anaconda3-2020.02-Linux-x86_64.sh
-echo 'CONDA_AUTO_ACTIVATE_BASE=false' >> ~/.bashrc
+conda config --set auto_activate_base false
 echo " "
 echo "Anaconda3 installation complete."
 sleep 2s
 echo " "
 
 echo "Step2:GNU Octave "
+sleep 4s
 echo " "
-echo "Installing Flatpak..."
-sudo apt-get -y install flatpak
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.octave.Octave
+sudo apt-get install -y octave-control octave-image octave-io octave-optim octave-signal octave-statistics
 echo " "
 echo "GNU Octave installation complete."
 sleep 2s
@@ -61,7 +59,8 @@ echo " "
 
 echo " Step3:Python3, Pip, and Jupyter Notebook."
 echo " "
-sudo apt-get update
+sleep 4s
+sudo apt-get -y update
 sudo apt-get -y install python3 python-pip python-dev
 sudo pip install --upgrade pip
 sudo -H pip install jupyter
@@ -72,6 +71,7 @@ echo " "
 
 echo "Installing ROS Melodic."
 echo " "
+sleep 4s
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 sudo apt-get update
@@ -86,7 +86,7 @@ echo " "
 sleep 2s
 echo "ROS Melodic installation complete."
 echo " "
-
+sleep 4s
 echo "Adding alias to .bashrc..."
 echo 'alias letsgoracing=". /home/$USER/Launchers/Motorsport.sh"' >> ~/.bashrc
 
